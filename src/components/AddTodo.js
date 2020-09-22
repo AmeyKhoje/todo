@@ -51,7 +51,7 @@ const AddTodo = (props) => {
                 position: 'top-center'
             })
         }
-        else if(/^[a-zA-Z]+$/.test(todo.todo)) {
+        else if(/^[a-zA-Z\s]*$/.test(todo.todo)) {
             props.onAddHandler(todo, date)
             setTodo({
                 ...todo,
@@ -74,7 +74,7 @@ const AddTodo = (props) => {
                 position: 'top-center'
             })
         }
-        else if (/^[a-zA-Z]+$/.test(toUpdate.todo)) {
+        else if (/^[a-zA-Z\s]+$/.test(toUpdate.todo)) {
             props.onUpdateHandler(toUpdate)
             setDialogOpen(!dialogOpen)
         }
