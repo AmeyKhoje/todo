@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import { Input, Button, List, ListItem, ListItemText, IconButton, Dialog, DialogContent, DialogTitle, DialogActions, Select, MenuItem, Tooltip, Checkbox } from '@material-ui/core'
 import * as actionTypes from '../store/actionTypes'
@@ -7,12 +7,7 @@ import Delete from '@material-ui/icons/Delete'
 import Edit from '@material-ui/icons/Edit'
 import 'date-fns'
 import DateFnsUtils from '@date-io/date-fns';
-import {
-  MuiPickersUtilsProvider,
-  KeyboardTimePicker,
-  KeyboardDatePicker,
-  DatePicker
-} from '@material-ui/pickers';
+import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -106,19 +101,19 @@ const AddTodo = (props) => {
                 <div className="w-100 d-flex">
                     <Input onChange={changeHandler} style={{ marginRight: 7 }} name="todo" value={todo && todo.todo} className="w-60" placeholder="Enter your todo" autoFocus />
                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                    <KeyboardDatePicker
-                        margin="normal"
-                        id="date-picker-dialog"
-                        className="date"
-                        style={{ marginRight: 7 }}
-                        format="dd/MM/yyyy"
-                        value={date}
-                        onChange={handleDateChange}
-                        
-                        KeyboardButtonProps={{
-                        'aria-label': 'change date',
-                        }}
-                    />
+                        <KeyboardDatePicker
+                            margin="normal"
+                            id="date-picker-dialog"
+                            className="date"
+                            style={{ marginRight: 7 }}
+                            format="dd/MM/yyyy"
+                            value={date}
+                            onChange={handleDateChange}
+                            
+                            KeyboardButtonProps={{
+                            'aria-label': 'change date',
+                            }}
+                        />
                     </MuiPickersUtilsProvider>
                     <Button 
                         type="submit"

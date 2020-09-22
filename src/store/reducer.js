@@ -5,7 +5,6 @@ const initialState = {
 }
 
 const reducerFunc = (state = initialState, action) => {
-    // eslint-disable-next-line default-case
     switch(action.type) {
         case actionTypes.ADD_TODO:
             return {
