@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body {
+    font-family: 'Poppins', sans-serif !important;
+    background-color: beige;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.MuiTypography-body1 {
+    font-family: 'Poppins', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.MuiButton-root {
+    font-family: 'Poppins', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.MuiInputBase-root {
+    font-family: 'Poppins', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.MuiMenuItem-root {
+    font-family: 'Poppins', sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.MuiSelect-select.MuiSelect-select {
+    padding-left: 10px;
+}
+
+.MuiIconButton-root {
+    /* background-color: #ccf7a2a1 !important;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); */
+}
+
+body::-webkit-scrollbar {
+    width: 7px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: rgb(83, 80, 75);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(138, 190, 214);
+}
+
+.todo-head {
+    text-align: center;
+    font-size: 22px;
+    margin: 0;
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
+.date .MuiIconButton-root {
+    background-color: transparent !important;
+    box-shadow: none;
+}
+
+.MuiPickersDay-day {
+    background-color: transparent !important;
+    box-shadow: none;
+}
+
+.MuiPickersDay-daySelected:hover {
+    background-color: #3f51b5 !important;
+}
+
+.MuiPickersDay-daySelected {
+    background-color: #3f51b5 !important;
+}
+
+.MuiPickersCalendarHeader-iconButton {
+    background-color: #fff !important;
+    box-shadow: none;
+}
+
+.MuiCheckbox-root {
+    background-color: transparent !important;
+    box-shadow: none;
 }
