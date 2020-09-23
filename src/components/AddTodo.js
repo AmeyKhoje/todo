@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux'
-import { Input, Button, List, ListItem, ListItemText, IconButton, Dialog, DialogContent, DialogTitle, DialogActions, Select, MenuItem, Tooltip, Checkbox } from '@material-ui/core'
+import { Input, Button, List, ListItem, ListItemText, IconButton, Dialog, DialogContent, DialogTitle, Select, MenuItem, Tooltip, Checkbox } from '@material-ui/core'
 import * as actionTypes from '../store/actionTypes'
 import './AddTodo.css'
 import Delete from '@material-ui/icons/Delete'

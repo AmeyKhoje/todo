@@ -36,6 +36,8 @@ const reducerFunc = (state = initialState, action) => {
                 ...state,
                 todos: updateT
             }
+        default:
+            return state
     }
     return state
 }
