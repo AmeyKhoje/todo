@@ -148,9 +148,9 @@ const AddTodo = (props) => {
                                     <Checkbox checked={todo.completed} onChange={() => props.onChangeStatus(!todo.completed, todo)} />
                                 </Tooltip>
                                 
-                                <ListItemText primary={todo.value} className='text-todo' />
-                                <ListItemText primary={todo.status} className="status-todo" /> 
-                                <ListItemText primary={`${todo.date.getDate()}/${todo.date.getMonth()}/${todo.date.getFullYear()}`} className="status-todo" /> 
+                                <ListItemText primary={todo.value} className='text-todo f-14' />
+                                <ListItemText primary={todo.status} className="status-todo f-14" /> 
+                                <ListItemText primary={`${todo.date.getDate()}/${todo.date.getMonth()}/${todo.date.getFullYear()}`} className="status-todo f-14" /> 
                                 <Tooltip title={<h6 style={{ fontSize: 14, lineHeight: 1, margin: '3px 0' , fontWeight: 300, fontFamily: 'Poppins' }}>Edit</h6>} arrow>
                                     <IconButton color="inherit" style={{ marginRight: 7 }} onClick={() => {setToUpdate({ id: todo.id, todo: todo.value, status: todo.status }); setDialogOpen(true)}}>
                                         <Edit />
@@ -176,9 +176,9 @@ const AddTodo = (props) => {
                                     <Checkbox checked={todo.completed} onChange={() => props.onChangeStatus(!todo.completed, todo)} />
                                 </Tooltip>
                                 
-                                <ListItemText primary={todo.value} className='text-todo' />
-                                <ListItemText primary={todo.status} className="status-todo" /> 
-                                <ListItemText primary={`${todo.date.getDate()}/${todo.date.getMonth()}/${todo.date.getFullYear()}`} className="status-todo" /> 
+                                <ListItemText primary={todo.value} className='text-todo f-14' />
+                                <ListItemText primary={todo.status} className="status-todo f-14" /> 
+                                <ListItemText primary={`${todo.date.getDate()}/${todo.date.getMonth()}/${todo.date.getFullYear()}`} className="status-todo f-14" /> 
                                 <Tooltip title={<h6 style={{ fontSize: 14, lineHeight: 1, margin: '3px 0' , fontWeight: 300, fontFamily: 'Poppins' }}>Edit</h6>} arrow>
                                     <IconButton color="inherit" style={{ marginRight: 7 }} onClick={() => {setToUpdate({ id: todo.id, todo: todo.value, status: todo.status }); setDialogOpen(true)}}>
                                         <Edit />

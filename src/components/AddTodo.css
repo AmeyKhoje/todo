@@ -89,4 +89,13 @@
     .text-todo {
         width: 30%;
     }
+    .f-14 {
+        font-size: 14px !important;
+    }
+    .f-14 span {
+        font-size: 14px !important;
+    }
+    .status-todo {
+        width: 30%;
+    }
 }
