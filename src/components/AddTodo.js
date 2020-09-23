@@ -119,7 +119,7 @@ const AddTodo = (props) => {
                         type="submit"
                         variant="contained"  
                         color="primary" 
-                        onClick={addTodoHandler}>Click</Button>
+                        onClick={addTodoHandler}>Save</Button>
                 </div>
             </form>
 
@@ -205,7 +205,7 @@ const AddTodo = (props) => {
                                 type="submit"
                                 variant="contained"  
                                 color="primary" 
-                                onClick={updateTodoHandler}>Click</Button>
+                                onClick={updateTodoHandler}>Update</Button>
                         </div>
                     </form>
                 </DialogContent>
