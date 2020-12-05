@@ -8,17 +8,20 @@
 }
 
 .todo-list_item {
-    background-color: rgba(109, 190, 196, 0.15);
+    /* background-color: rgba(109, 190, 196, 0.15); */
+    background: linear-gradient(225deg, #CDD2FD 3.26%, #6979F8 100%);
     transition: all 0.5s;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15), 0px -1px 3px 0px rgba(0, 0, 0, 0.15);
 }
 
 .todo-list_item-done {
-    background-color: rgba(53, 245, 60, 0.61) !important;
+    /* background-color: rgba(53, 245, 60, 0.61) !important; */
+    background: linear-gradient(225deg, #aaf7bd 3.26%, #33db6b 100%);
 }
 
 .todo-list_item-done:hover {
-    background-color: rgba(41, 204, 46, 0.693) !important;
+    /* background-color: rgba(41, 204, 46, 0.693) !important; */
+    /* background: linear-gradient(225deg, #aaf7bd 3.26%, #33db6b 100%); */
 }
 
 .todo-list_item-progress {
@@ -81,6 +84,10 @@
     justify-content: space-between;
 }
 
+.show-md {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .todo-main {
         width: 90%;
@@ -97,5 +104,11 @@
     }
     .status-todo {
         width: 30%;
+    }
+    .hide-md {
+        display: none;
+    }
+    .show-md {
+        display: block;
     }
 }

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux'
-import { Input, Button, List, ListItem, ListItemText, IconButton, Dialog, DialogContent, DialogTitle, Select, MenuItem, Tooltip, Checkbox } from '@material-ui/core'
+import { Input, Button, List, ListItem, ListItemText, IconButton, Dialog, DialogContent, DialogTitle, Select, MenuItem, Tooltip, Checkbox, Menu } from '@material-ui/core'
 import * as actionTypes from '../store/actionTypes'
 import './AddTodo.css'
 import Delete from '@material-ui/icons/Delete'
 import Edit from '@material-ui/icons/Edit'
+import MoreVert from '@material-ui/icons/MoreVert'
 import 'date-fns'
 import DateFnsUtils from '@date-io/date-fns';
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
@@ -16,6 +17,7 @@ const AddTodo = (props) => {
     const [todo, setTodo] = useState({
         status: 'Select Status'
     })
+    const [anchorEl, setAnchorEl] = useState(null)
     const [dialogOpen, setDialogOpen] = useState(false)
     const [toUpdate, setToUpdate] = useState({
         id: '', todo: ''
@@ -151,16 +153,29 @@ const AddTodo = (props) => {
                                 <ListItemText primary={todo.value} className='text-todo f-14' />
                                 <ListItemText primary={todo.status} className="status-todo f-14" /> 
                                 <ListItemText primary={`${todo.date.getDate()}/${todo.date.getMonth()}/${todo.date.getFullYear()}`} className="status-todo f-14" /> 
-                                <Tooltip title={<h6 style={{ fontSize: 14, lineHeight: 1, margin: '3px 0' , fontWeight: 300, fontFamily: 'Poppins' }}>Edit</h6>} arrow>
-                                    <IconButton color="inherit" style={{ marginRight: 7 }} onClick={() => {setToUpdate({ id: todo.id, todo: todo.value, status: todo.status }); setDialogOpen(true)}}>
-                                        <Edit />
-                                    </IconButton>
-                                </Tooltip>
-                                <Tooltip title={<h6 style={{ fontSize: 14, lineHeight: 1, margin: '3px 0' , fontWeight: 300, fontFamily: 'Poppins' }}>Delete</h6>} arrow>
-                                    <IconButton color="secondary" onClick={() => props.onDeleteTodo(todo)}>
-                                        <Delete />
-                                    </IconButton>
-                                </Tooltip>
+                                <div className="hide-md d-flex">
+                                    <Tooltip title={<h6 style={{ fontSize: 14, lineHeight: 1, margin: '3px 0' , fontWeight: 300, fontFamily: 'Poppins' }}>Edit</h6>} arrow>
+                                        <IconButton color="inherit" style={{ marginRight: 7 }} onClick={() => {setToUpdate({ id: todo.id, todo: todo.value, status: todo.status }); setDialogOpen(true)}}>
+                                            <Edit />
+                                        </IconButton>
+                                    </Tooltip>
+                                    <Tooltip title={<h6 style={{ fontSize: 14, lineHeight: 1, margin: '3px 0' , fontWeight: 300, fontFamily: 'Poppins' }}>Delete</h6>} arrow>
+                                        <IconButton color="secondary" onClick={() => props.onDeleteTodo(todo)}>
+                                            <Delete />
+                                        </IconButton>
+                                    </Tooltip>
+                                </div>
+                                <div className="show-md">
+                                    <Tooltip title={<h6 style={{ fontSize: 14, lineHeight: 1, margin: '3px 0' , fontWeight: 300, fontFamily: 'Poppins' }}>Actions</h6>} arrow>
+                                        <IconButton color="inherit">
+                                            <MoreVert onClick={(e) => setAnchorEl(e.currentTarget)} />
+                                        </IconButton>
+                                    </Tooltip>
+                                    <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={() => setAnchorEl(null)}>
+                                        <MenuItem onClick={() => {setToUpdate({ id: todo.id, todo: todo.value, status: todo.status }); setDialogOpen(true); setAnchorEl(null)}}>Edit</MenuItem>
+                                        <MenuItem onClick={() => {props.onDeleteTodo(todo); setAnchorEl(null)}} >Delete</MenuItem>
+                                    </Menu>
+                                </div>
                             </ListItem>
                         ))
                     }
